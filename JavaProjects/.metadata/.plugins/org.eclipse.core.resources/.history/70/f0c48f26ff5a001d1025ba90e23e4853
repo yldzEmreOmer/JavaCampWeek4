@@ -1,0 +1,43 @@
+package kodlama.io.devs.dataAccess.concretes;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.stereotype.Repository;
+
+import kodlama.io.devs.dataAccess.abstracts.LanguageRepository;
+import kodlama.io.devs.entities.concretes.ProgrammerLanguage;
+
+@Repository
+public class InMemoryLanguageRepository implements LanguageRepository {
+
+	List<ProgrammerLanguage> programmerLanguages;
+
+	public InMemoryLanguageRepository() {
+		programmerLanguages = new ArrayList<ProgrammerLanguage>();
+		programmerLanguages.add(new ProgrammerLanguage(1, "Java"));
+		programmerLanguages.add(new ProgrammerLanguage(2, "C"));
+		programmerLanguages.add(new ProgrammerLanguage(3, "Python"));
+		programmerLanguages.add(new ProgrammerLanguage(4, "Javascript"));
+		programmerLanguages.add(new ProgrammerLanguage(5, "C++"));
+	}
+
+	@Override
+	public List<ProgrammerLanguage> getAll() {
+
+		return programmerLanguages;
+	}
+
+	@Override
+	public void add(ProgrammerLanguage programmerLanguage) {
+		programmerLanguages.add(programmerLanguage);
+
+	}
+
+	@Override
+	public void delete(ProgrammerLanguage programmerLanguage) {
+		programmerLanguages.remove(programmerLanguage);
+		
+	}
+
+}

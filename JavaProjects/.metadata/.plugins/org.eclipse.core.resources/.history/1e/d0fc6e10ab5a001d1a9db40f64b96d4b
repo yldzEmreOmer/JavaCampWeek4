@@ -1,0 +1,6 @@
+package kodlama.io.devs.business.abstracts;
+
+public interface LanguageService {
+
+	List<Prog>
+}

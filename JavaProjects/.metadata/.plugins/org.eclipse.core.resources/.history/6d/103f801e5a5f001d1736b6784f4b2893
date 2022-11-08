@@ -1,0 +1,10 @@
+package kodlama.io.devs.entities.concretes;
+
+public class LanguageTechnology {
+
+	
+	private int id;
+	private String name;
+	
+	
+}
